@@ -1,0 +1,42 @@
+#top-bar{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    /*margin: 0;*/
+    position: fixed;
+    width: 100%;
+    margin-bottom: auto;
+    align-items: flex-end;
+}
+
+#top-bar-right{
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    margin-left: auto;
+    padding: 10px;
+    
+}
+
+#top-bar-left{
+    background-color: yellow;
+    margin:10px;
+    
+}
+
+.top-bar-right-buttons{
+    margin : 10px;
+    background-color: aqua;
+    align-content: end;
+}
+
+html{
+    margin-top:0;
+    padding-top:0;
+}
+body{
+    margin:0;
+    padding-top:0;
+}
+p{
+}
