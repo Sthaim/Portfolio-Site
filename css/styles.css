@@ -1,7 +1,7 @@
 #top-bar{
     display: flex;
     flex-direction: row;
-    background-color: red;
+    background-color: dimgrey;
     /*margin: 0;*/
     position: fixed;
     width: 100%;
@@ -10,7 +10,6 @@
 }
 
 #top-bar-left{
-    background-color: yellow;
     display: flex;
     margin-left: 20px;
     height: 70%;
@@ -21,7 +20,6 @@
     height: 100%;
     display: flex;
     flex-direction: row;
-    background-color: blue;
     margin-left: auto;
     margin-right: 20px;
     align-items: center
@@ -33,7 +31,6 @@
     height: 70%;
     margin-left : 10px;
     margin-right : 10px;
-    background-color: aqua;
     align-items: flex-end;
     -webkit-user-select: initial;
 }
@@ -47,18 +44,32 @@ html{
     padding-top:0;
 }
 
+p{
+    font-size:larger;
+    font-family:ibm_plex_sans;
+}
+
 body{
     margin:0;
     padding-top:0;
     background-color: gray;
 }
 
-h2{
-    margin :0;
+h2 {
+    margin: 0;
+    font-family: ibm_plex_sans_condensed;
+    color: black;
 }
-h1{
-    margin:0;
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-family: ibm_plex_sans_condensed;
 }
+
+a {
+    text-decoration: none;
+}
+
 #projects-part{
     display: flex;
     /*padding-top: 70px;*/
@@ -94,6 +105,7 @@ h1{
     display: flex;
     width:100%;
     height: 300px;
+    padding-top:70px;
     font-size : 8em;
     align-items: center;
     justify-content: center;
@@ -123,12 +135,13 @@ h1{
     color : whitesmoke;
 }
 
-.programmer{
+.programmer {
     display: flex;
-    height:100%;
-    width:50%;
+    height: 100%;
+    width: 50%;
     justify-content: center;
     align-items: center;
+    font-family: ibm_plex_sans_condensed;
 }
 
 #about-me-part{
@@ -144,4 +157,18 @@ h1{
     width:80%;
     height:80%;
     border: 1px solid blue;
+}
+
+@font-face {
+    font-family: 'ibm_plex_sans';
+    src: url('../fonts/IBMPlexSans/ibmplexsans-medium-webfont.woff2') format('woff2'), url('../fonts/IBMPlexSans/ibmplexsans-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ibm_plex_sans_condensed';
+    src: url('../fonts/IBMPlexSansCondensed/ibmplexsanscondensed-medium-webfont.woff2') format('woff2'), url('../fonts/IBMPlexSansCondensed/ibmplexsanscondensed-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
