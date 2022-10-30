@@ -16,13 +16,13 @@ $(document).ready(function(){
         this.style.backgroundColor = this.parentElement.style.backgroundColor;
     });
 
-    $(".project").mouseenter(function(){
-        this.style.height = "500px";
-        this.style.width = "400px";
-    });
+    // $(".project").mouseenter(function(){
+    //     this.style.height = "500px";
+    //     this.style.width = "400px";
+    // });
 
-    $(".project").mouseleave(function(){
-        this.style.height = "400px";
-        this.style.width = "300px";
-    });
+    // $(".project").mouseleave(function(){
+    //     this.style.height = "400px";
+    //     this.style.width = "300px";
+    // });
 });
