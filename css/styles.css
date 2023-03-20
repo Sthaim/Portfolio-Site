@@ -30,18 +30,32 @@ a {
     text-decoration: none;
 }
 
-#top-bar{
+#top-bar-shadow{
     display: flex;
     flex-direction: row;
-    background-color: #383838;
+    background-color: #0E3C45;
     color : white;
     /*margin: 0;*/
     position: fixed;
     width: 100%;
     height: 70px;
     align-items: center;
-    box-shadow: -3px 3px 15px 1px black;
-    z-index:1000;
+    box-shadow: rgba(28, 46, 60, 0.641) 0px 7px 29px 0px;
+    transition: 0.2s all;
+    z-index:2;
+}
+
+#top-bar{
+    display: flex;
+    flex-direction: row;
+    background-color: #0E3C45;
+    color : white;
+    /*margin: 0;*/
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    transition: 0.2s all;
 }
 
 #top-bar-left{
@@ -74,18 +88,22 @@ a {
 
 #projects-part{
     display: flex;
-    height: 700px;
+    height: 650px;
     width: 100%;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    background-color: #0E3C45;
 }
 
 #project-title{
-    font-size: 2.5em;
+    display: flex;
+    font-size: 3em;
     font-family: ibm_plex_sans, serif;
-    padding-top : 100px;
-    padding-left:100px;
+    color: #DEDEDE;
+    height: 60px;
+    padding-bottom: 80px;
+    align-items: center;                    
 }
 
 .project{
@@ -106,6 +124,13 @@ a {
     background-color: black;
     border-radius: 20px 20px 0 0;
 }
+
+#projects-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
 .title-proj{
     display: flex;
     width:100%;
@@ -140,15 +165,16 @@ a {
 #skills-part {
     display: flex;
     /*padding-top: 70px;*/
-    height: 200px;
+    height: 350px;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 #skills-logos{
     display: flex;
     width:100%;
-    height:70%;
+    height:150px;
     justify-content: space-evenly;
 }
 
@@ -179,20 +205,19 @@ a {
 }
 
 #skills-texts{
+    display:flex;
+    justify-content: center;
     width:100%;
-    height:30%;
-    padding-bottom:50px;
+    height:70px;
+    align-items: center;
+    color: #0E3C45;
 }
 
 #skills-texts-child{
-    font-size: 2.5em;
-    font-family: ibm_plex_sans, serif;
-    padding-left:100px;
-}
 
-.gameplay{
-    background-color: black;
-    color : #DEDEDE;
+    font-size: 3em;
+    font-family: ibm_plex_sans, serif;
+    
 }
 
 .programmer {
@@ -201,23 +226,70 @@ a {
     width: 50%;
     justify-content: center;
     align-items: center;
+    color: #0E3C45;
     font-family: ibm_plex_sans_condensed, serif;
+}
+
+.gameplay{
+    background-color: #0E3C45;
+    color : #DEDEDE;
 }
 
 #about-me-part{
     display: flex;
-    height: 100px;
+    height: 450px;
     width:100%;
-    padding-top: 70px;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+#about-me-title{
+    font-size: 3em;
+    font-family: ibm_plex_sans, serif;
+    display: flex;
+    justify-content: flex-start;
+    width:80%;
+    height:70px;
+    align-items: center;
+    color: #0E3C45;
 }
 
 #text-placement{
+    display: flex;
     text-align: center;
-    width:80%;
-    height:80%;
+    width:50%;
+    height:100%;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
 }
+
+#about-text-zone{
+    display: flex;
+    width : 100%;
+    justify-content: flex-end;
+}
+
+#about-me-text{
+    display: flex;
+    text-align: justify;
+}
+
+#about-me-text-titles{
+    display: flex;
+    margin: 0;
+    font-family: ibm_plex_sans_condensed;
+    color : #0E3C45 ;
+    font-size: 2em;
+}
+
+#about-me-image{
+    display: flex;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
 .nav-bar{
     background-color: dodgerblue;
     height: 4px;
@@ -239,32 +311,46 @@ a {
     display: flex;
     width: 100%;
     height:500px;
-    padding-top : 100px;
+    /*padding-top : 100px;*/
     flex-direction: column;
     overflow: auto;
+    background-color: #0E3C45;
+    color :#DEDEDE;
+    justify-content: center;
 }
 
 #contact-title{
-    padding-left:100px;
-    font-size: 2.5em;
+    
+    font-size: 3em;
     font-family: ibm_plex_sans, serif;
+    display: flex;
+    justify-content: center;
 }
 
 #contact-part-bottom{
     display: flex;
+    height: 350px;
     flex-direction: column;
+    background-color: #0E3C45;
+    justify-content: space-around;
 }
 
 #text-contact{
     display: flex;
-    align-items: start;
-    padding-left:150px;
+    align-items: center;
+    justify-content: center;
+    color : #DEDEDE;
+    height: 150px;
+}
+
+#p-text-contact{
+    color: #DEDEDE;
 }
 
 #contact-logo-centering{
     display:flex;
     width: 100%;
-    padding-top:30px;
+    /*padding-top:30px;*/
     justify-content: center;
 }
 
@@ -278,17 +364,23 @@ a {
 .contact-me-logos{
     display: flex;
     flex-direction: column;
-    height:100px;
+    height:150px;
     width:100px;
     align-items: center;
     transition-duration:0.2s;
 }
+
+.logo-contact-text{
+    color:#DEDEDE;
+}
+
+
 .contact-me-logos:hover{
     scale: 1.1;
 }
 
 .contact-me-logos-image{
-    height:100%;
+    height:50%;
 }
 
 @font-face {

@@ -26,3 +26,22 @@ $(document).ready(function(){
     //     this.style.width = "300px";
     // });
 });
+
+var _hasBeenInShadow = false;
+
+$( document ).ready(function() {
+    HasScrollFromTheTop()
+  });
+  
+  window.onscroll = function() {HasScrollFromTheTop()};
+  
+  function HasScrollFromTheTop() {
+    if (document.documentElement.scrollTop != 0 && !_hasBeenInShadow) {
+      _hasBeenInShadow = true;
+      document.getElementById("top-bar").id = "top-bar-shadow";
+    }
+    else if (document.documentElement.scrollTop == 0 && _hasBeenInShadow){
+      _hasBeenInShadow = false;
+      document.getElementById("top-bar-shadow").id = "top-bar";
+    }
+  }
