@@ -1,33 +1,49 @@
-body{
-    margin:0;
-    padding-top:0;
-    background-color: #DEDEDE;
-}
+/*#region Basics*/
+    body{
+        margin:0;
+        padding-top:0;
+        background-color: #DEDEDE;
+    }
 
-html{
-    margin-top:0;
-    padding-top:0;
-}
+    html{
+        margin-top:0;
+        padding-top:0;
+    }
 
-p{
-    font-size:larger;
-    color:black;
-    font-family:ibm_plex_sans;
-}
+    p{
+        font-size:larger;
+        color:black;
+        font-family:ibm_plex_sans;
+    }
 
-h2 {
-    margin: 0;
-    font-family: ibm_plex_sans_condensed;
+    h2 {
+        margin: 0;
+        font-family: ibm_plex_sans_condensed;
+        color : white;
+    }
+    h1 {
+        margin: 0;
+        font-size: 2.5em;
+        font-family: ibm_plex_sans_condensed;
+    }
+
+    a {
+        text-decoration: none;
+    }
+/*#endregion */
+
+/*#region TopBar*/
+#top-bar{
+    display: flex;
+    flex-direction: row;
+    background-color: #0E3C45;
     color : white;
-}
-h1 {
-    margin: 0;
-    font-size: 2.5em;
-    font-family: ibm_plex_sans_condensed;
-}
-
-a {
-    text-decoration: none;
+    /*margin: 0;*/
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    align-items: center;
+    transition: 0.2s all;
 }
 
 #top-bar-shadow{
@@ -43,19 +59,6 @@ a {
     box-shadow: rgba(28, 46, 60, 0.641) 0px 7px 29px 0px;
     transition: 0.2s all;
     z-index:2;
-}
-
-#top-bar{
-    display: flex;
-    flex-direction: row;
-    background-color: #0E3C45;
-    color : white;
-    /*margin: 0;*/
-    position: fixed;
-    width: 100%;
-    height: 70px;
-    align-items: center;
-    transition: 0.2s all;
 }
 
 #top-bar-left{
@@ -86,6 +89,119 @@ a {
     transition-delay: 0s;
 }
 
+.nav-bar{
+    background-color: dodgerblue;
+    height: 4px;
+    width: 0;
+    transition-property: width;
+    transition-duration: 0.5s;
+    transition-delay: 0s;
+}
+/*#endregion */
+
+/*#region Role*/
+#role{
+    display: flex;
+    width:100%;
+    padding-top:70px;
+    font-size : 8em;
+    align-items: center;
+    justify-content: center;
+}
+
+.role-size{
+    flex-direction: column;
+}
+
+@media (min-width:1340px) {
+    .role-size{
+        flex-direction: row;
+    }
+    .role-words{
+        width: 50%;
+    }
+}
+
+.programmer {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #0E3C45;
+    font-family: ibm_plex_sans_condensed, serif;
+}
+
+.role-words{
+    width: 100%;
+}
+
+.gameplay{
+    background-color: #0E3C45;
+    color : #DEDEDE;
+}
+
+/*#endregion */
+
+/*#region AboutMe*/
+#about-me-part{
+    display: flex;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top:30px;
+    padding-bottom: 30px;
+    align-items: flex-start;
+}
+
+#about-me-title{
+    font-size: 3em;
+    font-family: ibm_plex_sans, serif;
+    display: flex;
+    justify-content: flex-start;
+    padding-left:5%;
+    align-items: center;
+    color: #0E3C45;
+}
+
+#about-text-zone{
+    display: flex;
+    width : 100%;
+    justify-content: flex-end;
+}
+
+#text-placement{
+    display: flex;
+    text-align: center;
+    height:100%;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about-me-text{
+    display: flex;
+    text-align: justify;
+    padding-left:15%;
+}
+
+#about-me-text-titles{
+    display: flex;
+    font-family: ibm_plex_sans_condensed;
+    color : #0E3C45 ;
+    font-size: 2em;
+    padding-left:12%;
+}
+
+#about-me-image{
+    display: flex;
+    padding-right: 50px;
+    padding-left: 50px;
+    width:100%;
+}
+/*#endregion */
+
+/*#region Projects*/
 #projects-part{
     display: flex;
     height: 650px;
@@ -104,6 +220,12 @@ a {
     height: 60px;
     padding-bottom: 80px;
     align-items: center;                    
+}
+
+#projects-container{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .project{
@@ -125,10 +247,9 @@ a {
     border-radius: 20px 20px 0 0;
 }
 
-#projects-container{
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
+#img-lilia{
+    width:100%;
+    object-fit: contain;
 }
 
 .title-proj{
@@ -147,21 +268,16 @@ a {
     background-color: hotpink;
 }
 
+#img-retard{
+    width:100%;
+}
+
 #title-retard{
     background-color: #5a567d;
 }
+/*#endregion */
 
-
-#role{
-    display: flex;
-    width:100%;
-    height: 300px;
-    padding-top:70px;
-    font-size : 8em;
-    align-items: center;
-    justify-content: center;
-}
-
+/*#region Skills*/
 #skills-part {
     display: flex;
     /*padding-top: 70px;*/
@@ -169,6 +285,22 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+
+#skills-texts{
+    display:flex;
+    justify-content: center;
+    width:100%;
+    height:70px;
+    align-items: center;
+    color: #0E3C45;
+}
+
+#skills-texts-child{
+
+    font-size: 3em;
+    font-family: ibm_plex_sans, serif;
+    
 }
 
 #skills-logos{
@@ -203,110 +335,9 @@ a {
 .logo-image-stat:hover {
     opacity: 1;
 }
+/*#endregion */
 
-#skills-texts{
-    display:flex;
-    justify-content: center;
-    width:100%;
-    height:70px;
-    align-items: center;
-    color: #0E3C45;
-}
-
-#skills-texts-child{
-
-    font-size: 3em;
-    font-family: ibm_plex_sans, serif;
-    
-}
-
-.programmer {
-    display: flex;
-    height: 100%;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    color: #0E3C45;
-    font-family: ibm_plex_sans_condensed, serif;
-}
-
-.gameplay{
-    background-color: #0E3C45;
-    color : #DEDEDE;
-}
-
-#about-me-part{
-    display: flex;
-    height: 450px;
-    width:100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#about-me-title{
-    font-size: 3em;
-    font-family: ibm_plex_sans, serif;
-    display: flex;
-    justify-content: flex-start;
-    width:80%;
-    height:70px;
-    align-items: center;
-    color: #0E3C45;
-}
-
-#text-placement{
-    display: flex;
-    text-align: center;
-    width:50%;
-    height:100%;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-}
-
-#about-text-zone{
-    display: flex;
-    width : 100%;
-    justify-content: flex-end;
-}
-
-#about-me-text{
-    display: flex;
-    text-align: justify;
-}
-
-#about-me-text-titles{
-    display: flex;
-    margin: 0;
-    font-family: ibm_plex_sans_condensed;
-    color : #0E3C45 ;
-    font-size: 2em;
-}
-
-#about-me-image{
-    display: flex;
-    padding-right: 50px;
-    padding-left: 50px;
-}
-
-.nav-bar{
-    background-color: dodgerblue;
-    height: 4px;
-    width: 0;
-    transition-property: width;
-    transition-duration: 0.5s;
-    transition-delay: 0s;
-}
-
-#img-lilia{
-    width:100%;
-}
-
-#img-retard{
-    width:100%;
-}
-
+/*#region Contact*/
 #contact-part{
     display: flex;
     width: 100%;
@@ -347,6 +378,7 @@ a {
     color: #DEDEDE;
 }
 
+
 #contact-logo-centering{
     display:flex;
     width: 100%;
@@ -370,11 +402,6 @@ a {
     transition-duration:0.2s;
 }
 
-.logo-contact-text{
-    color:#DEDEDE;
-}
-
-
 .contact-me-logos:hover{
     scale: 1.1;
 }
@@ -383,6 +410,12 @@ a {
     height:50%;
 }
 
+.logo-contact-text{
+    color:#DEDEDE;
+}
+/*#endregion */
+
+/*#region Fonts*/
 @font-face {
     font-family: 'ibm_plex_sans';
     src: url('../fonts/IBMPlexSans/ibmplexsans-medium-webfont.woff2') format('woff2'), url('../fonts/IBMPlexSans/ibmplexsans-medium-webfont.woff') format('woff');
@@ -396,3 +429,4 @@ a {
     font-weight: normal;
     font-style: normal;
 }
+/*#endregion */
