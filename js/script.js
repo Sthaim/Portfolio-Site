@@ -9,7 +9,7 @@ $(document).ready(function(){
     });
 
     $(".top-bar-right-buttons").mousedown(function(){
-        this.style.backgroundColor = "dodgerblue";
+        this.style.color = "#FFD900";
     });
 
     $(".top-bar-right-buttons").mouseup(function(){
@@ -29,19 +29,43 @@ $(document).ready(function(){
 
 var _hasBeenInShadow = false;
 
+var _isTop = false;
+
 $( document ).ready(function() {
     HasScrollFromTheTop()
   });
   
-  window.onscroll = function() {HasScrollFromTheTop()};
-  
-  function HasScrollFromTheTop() {
-    if (document.documentElement.scrollTop != 0 && !_hasBeenInShadow) {
-      _hasBeenInShadow = true;
-      document.getElementById("top-bar").id = "top-bar-shadow";
-    }
-    else if (document.documentElement.scrollTop == 0 && _hasBeenInShadow){
-      _hasBeenInShadow = false;
-      document.getElementById("top-bar-shadow").id = "top-bar";
-    }
+window.onscroll = function() {HasScrollFromTheTop()};
+
+function HasScrollFromTheTop() {
+  console.log("scrolling?")
+  if (document.documentElement.scrollTop != 0 && !_hasBeenInShadow) {
+    _hasBeenInShadow = true;
+    document.getElementById("top-bar").id = "top-bar-shadow";
   }
+  else if (document.documentElement.scrollTop == 0 && _hasBeenInShadow){
+    _hasBeenInShadow = false;
+    document.getElementById("top-bar-shadow").id = "top-bar";
+  }
+
+  if (document.documentElement.scrollTop != 0 && _isTop) {
+    _isTop = false;
+    window.scrollTo(0, Position(document.getElementById("anchor-about-me")));
+    
+  }
+
+  if (document.documentElement.scrollTop == 0 && !_isTop) {
+    _isTop = true;
+  }
+}
+
+function Position(obj){
+  var currenttop = 0;
+  if (obj.offsetParent){
+   do{
+    currenttop += obj.offsetTop;
+   }while ((obj = obj.offsetParent));
+   return [currenttop];
+   }
+ }
+
