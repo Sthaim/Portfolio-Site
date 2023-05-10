@@ -107,7 +107,7 @@ function Position(obj){
    do{
     currenttop += obj.offsetTop;
    }while ((obj = obj.offsetParent));
-   return [currenttop];
+    return [currenttop];
    }
 }
 
@@ -121,49 +121,45 @@ var _n1Active = false;
 
 var _n2Active = false;
 
+var _currentUsedNumber = null;
+
+var _isScrollBarred = null;
+
 $(document).ready(function myFunction () {
-  $(".button").mouseenter(function(){
-    this.classList.add('button-testing');
-  });
-
-  $(".button").mouseleave(function(){
-    this.classList.remove('button-testing');
-  });
-
   $(".button").mousedown(function(){
-    if(this.classList.contains("n1") && _n1Active){
-      for (const box of collectionN1) {
-        box.classList.remove('desc-project-opened');
-      }
-      //collectionN1.classList.remove('desc-project-opened');
-      return;
-    }
-    else if(this.classList.contains("n2") && _n2Active){
-      for (const box of collectionN2) {
-        box.classList.remove('desc-project-opened');
-      }
-      return;
-    }
-    
-    if (this.classList.contains("n1")){
-      _n1Active = true;
-      _n2Active = false;
-      for (const box of collectionN1) {
-        box.classList.add('desc-project-opened');
-      }
-      for (const box of collectionN2) {
-        box.classList.remove('desc-project-opened');
-      }
+    var buttonNumber = FindButtonNumber(this,0);
+    if(buttonNumber == _currentUsedNumber){
+      CloseIndex(_currentUsedNumber);
+      _currentUsedNumber = null;
     }
     else{
-      _n1Active = false;
-      _n2Active = true;
-      for (const box of collectionN2) {
-        box.classList.add('desc-project-opened');
-      }
-      for (const box of collectionN1) {
-        box.classList.remove('desc-project-opened');
-      }
+      OpenIndex(buttonNumber);
+      CloseIndex(_currentUsedNumber);
+      _currentUsedNumber = buttonNumber;
     }
   });
 });
+
+
+function FindButtonNumber(obj,i){
+  if(obj.classList.contains("n"+i))
+    return i;
+  else
+    return FindButtonNumber(obj,i+1);
+}
+
+function OpenIndex(i){
+  var coll = document.getElementsByClassName("desc-project n"+i);
+  for (const box of coll) {
+        box.classList.add('opened');
+      }
+}
+
+function CloseIndex(i){
+  var coll = document.getElementsByClassName("desc-project n"+i);
+  for (const box of coll) {
+        box.classList.remove('opened');
+      }
+}
+
+

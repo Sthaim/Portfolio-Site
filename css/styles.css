@@ -3,7 +3,7 @@
         margin:0;
         padding-top:0;
         background-color: #fefefe;
-
+        scrollbar-width: none;
     }
 
     html{
@@ -40,6 +40,7 @@
         align-items: center;
         padding:0 20px;
         margin:auto;
+        
     }
 
     #test{
@@ -147,41 +148,11 @@
     flex-direction: column;
 }
 
-@media (min-width:1340px) {
-    .role-size{
-        flex-direction: row;
-    }
-    .role-words{
-        width: 50%;
-    }
-}
-
-.programmer {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    color: #25003b;
-    font-family: ibm_plex_sans_condensed, serif;
-    z-index: 2;
-    
-}
-
-.role-words{
-    width: 100%;
-}
-
-.gameplay{
-    background-color: #25003b;
-    
-        color : #fefefe;
-}
-
 .img-wip{
     position:absolute;
     top:70px;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh - 70px);
     background-image: url("../../images/WIPFond.png");
     background-position: center;
     background-size: cover;
@@ -258,11 +229,8 @@
     align-items: center;
     background-color: #25003b;
     padding: 50px 0px;
-    width: 100vw;
-    /*left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;*/
+    width: calc(100vw - 17px);
+    overflow: hidden;
 }
 
 #project-title{
@@ -343,25 +311,23 @@
 }
 
 .desc-project{
-    width: 0;
+    width: auto;
     height: 0;
     transition: height 2s;
-    /*transition: width 2s, height 2s;*/
+    overflow: hidden;
+    transition: all 0.5s;
 }
 
-.desc-project-opened{
-    width: 100vw;
-    height: 100px;
-    margin-top: 100px; 
+.desc-project.opened{
     
+    height: auto;
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
-.n1{
-    background-color: #fefefe;
-}
-
-.n2{
-    background-color: aqua;
+.project-text-desc{
+    color:aliceblue;
 }
 /*#endregion */
 
@@ -435,10 +401,10 @@
 /*#region Contact*/
 #contact-part{
     display: flex;
-    width: 100vw;
+    width: calc(100vw - 17px);
     /*padding-top : 100px;*/
     flex-direction: column;
-    overflow: auto;
+    overflow: hidden;
     padding: 30px 0;
     background: rgb(37,0,59);
     background: linear-gradient(180deg, rgba(37,0,59,1) 0%, rgba(45,0,75,1) 20%, rgba(55,0,92,1) 100%);    justify-content: center;
