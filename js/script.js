@@ -113,6 +113,7 @@ function Position(obj){
 
 //#endregion
 
+//#region Opening under project
 const collectionN1 = document.getElementsByClassName("desc-project n1");
 
 const collectionN2 = document.getElementsByClassName("desc-project n2");
@@ -161,5 +162,35 @@ function CloseIndex(i){
         box.classList.remove('opened');
       }
 }
+//#endregion
 
+//#region Sliding div
 
+var currentPage = 0;
+
+const sections = document.getElementsByClassName("section");
+
+$(document).ready(function(){
+	$(".button-nav").mousedown(function(){
+	  if(this.classList.contains("plus")){
+	    if (HasReachedMax(currentPage+1)){
+  	    return;
+  	  }
+      currentPage++;
+  		$(this).parent().find('.parent-sliding').css({"right": 100 * currentPage + "%"});
+		}
+		else{
+  	  if (currentPage <= 0)
+  	    return;
+  	  currentPage--;
+  		$(this).parent().find('.parent-sliding').css({"right": 100 * currentPage + "%"});
+		}
+    console.log(currentPage);
+	});
+});
+
+function HasReachedMax(i) {
+  return sections.length-1 < i;
+}
+
+//#endregion
