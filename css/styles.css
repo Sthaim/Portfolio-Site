@@ -355,6 +355,11 @@
     background-color: orangered;
 }
 
+.button-nav.out{
+    height:0;
+    width:0;
+}
+
 .project-text-desc{
     color:aliceblue;
 }

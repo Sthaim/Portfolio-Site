@@ -114,21 +114,11 @@ function Position(obj){
 //#endregion
 
 //#region Opening under project
-const collectionN1 = document.getElementsByClassName("desc-project n1");
-
-const collectionN2 = document.getElementsByClassName("desc-project n2");
-
-var _n1Active = false;
-
-var _n2Active = false;
-
 var _currentUsedNumber = null;
-
-var _isScrollBarred = null;
 
 $(document).ready(function myFunction () {
   $(".button").mousedown(function(){
-    var buttonNumber = FindButtonNumber(this,0);
+    var buttonNumber = FindButtonNumber($(this));
     if(buttonNumber == _currentUsedNumber){
       CloseIndex(_currentUsedNumber);
       _currentUsedNumber = null;
@@ -137,13 +127,14 @@ $(document).ready(function myFunction () {
       OpenIndex(buttonNumber);
       CloseIndex(_currentUsedNumber);
       _currentUsedNumber = buttonNumber;
+      ButtonToggleOnMinMax();
     }
   });
 });
 
 
-function FindButtonNumber(obj,i){
-  if(obj.classList.contains("n"+i))
+function FindButtonNumber(obj,i=0){
+  if(obj.hasClass("n"+i))
     return i;
   else
     return FindButtonNumber(obj,i+1);
@@ -151,28 +142,38 @@ function FindButtonNumber(obj,i){
 
 function OpenIndex(i){
   var coll = document.getElementsByClassName("desc-project n"+i);
+  UpdateSections(i);
+  ResetPosition();
   for (const box of coll) {
         box.classList.add('opened');
       }
 }
 
 function CloseIndex(i){
-  var coll = document.getElementsByClassName("desc-project n"+i);
+  var coll = document.getElementsByClassName("desc-project n"+i); 
   for (const box of coll) {
         box.classList.remove('opened');
       }
 }
+
+
 //#endregion
 
 //#region Sliding div
 
 var currentPage = 0;
 
-const sections = document.getElementsByClassName("section");
+var sections = 0;
+
+function UpdateSections(i){
+  sections = document.getElementsByClassName("section n"+i).length;
+}
 
 $(document).ready(function(){
+  UpdateSectionWidth();
 	$(".button-nav").mousedown(function(){
 	  if(this.classList.contains("plus")){
+      //console.log(currentPage + " is the current page. " + sections.length + " is the max");
 	    if (HasReachedMax(currentPage+1)){
   	    return;
   	  }
@@ -185,12 +186,48 @@ $(document).ready(function(){
   	  currentPage--;
   		$(this).parent().find('.parent-sliding').css({"right": 100 * currentPage + "%"});
 		}
-    console.log(currentPage);
+    ButtonToggleOnMinMax();
 	});
 });
 
+function ResetPosition(){
+  currentPage = 0;
+  $('.parent-sliding').css({"right": 100 * currentPage + "%"});
+}
+
+function UpdateSectionWidth(){
+    var parentSlidings = document.querySelectorAll(".parent-sliding");
+    for (var i = 0, len = parentSlidings.length; i < len; i++) {
+      var nIndex = FindButtonNumber($(parentSlidings[i]).parent());
+      var offset = document.querySelectorAll(".section.n"+nIndex).length;
+      $(parentSlidings[i]).css({"width": 100 * offset + "%"});
+    }
+}
+
+function ButtonToggleOnMinMax(){
+  if(_currentUsedNumber == null) return;
+  console.log(_currentUsedNumber);
+  var minusButton = document.querySelector(".button-nav:not(.plus).n"+_currentUsedNumber);
+  if(currentPage == 0){
+    if(!minusButton.classList.contains("out"))
+      minusButton.classList.add("out");
+  }
+  else{
+    if(minusButton.classList.contains("out"))
+      minusButton.classList.remove("out");
+  }
+  var plusButton = document.querySelector(".button-nav.plus.n"+_currentUsedNumber);
+  if(HasReachedMax(currentPage+1)){
+    if(!plusButton.classList.contains("out"))
+      plusButton.classList.add("out");
+  }
+  else{
+    if(plusButton.classList.contains("out"))
+      plusButton.classList.remove("out");
+  }       
+}
 function HasReachedMax(i) {
-  return sections.length-1 < i;
+  return sections-1 < i;
 }
 
 //#endregion
