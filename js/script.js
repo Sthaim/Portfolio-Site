@@ -10,11 +10,11 @@ $(document).ready(function(){
   });
 
   $(".top-bar-right-buttons").mousedown(function(){
-      this.fourChildNode.style.color = "#FFD900";
+      $(this).find("h2").css("color" ,"#FFD900");
   });
 
   $(".top-bar-right-buttons").mouseup(function(){
-      this.style.backgroundColor = this.parentElement.style.backgroundColor;
+    $(this).find("h2").css("color" ,"#fefefe");
   });
 });
 //#endregion
@@ -188,6 +188,11 @@ $(document).ready(function(){
 		}
     ButtonToggleOnMinMax();
 	});
+
+  $(".button-close").mousedown(function(){
+	  CloseIndex(_currentUsedNumber);
+      _currentUsedNumber = null;
+	});
 });
 
 function ResetPosition(){
@@ -206,7 +211,6 @@ function UpdateSectionWidth(){
 
 function ButtonToggleOnMinMax(){
   if(_currentUsedNumber == null) return;
-  console.log(_currentUsedNumber);
   var minusButton = document.querySelector(".button-nav:not(.plus).n"+_currentUsedNumber);
   if(currentPage == 0){
     if(!minusButton.classList.contains("out"))
