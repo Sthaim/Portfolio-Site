@@ -129,9 +129,20 @@ $(document).ready(function myFunction () {
       _currentUsedNumber = buttonNumber;
       ButtonToggleOnMinMax();
     }
+    SetIndicators();
   });
 });
 
+function SetIndicators(){
+  if(!$(".indicator.n"+_currentUsedNumber).hasClass("opened")){
+    $(".indicator.n"+_currentUsedNumber).addClass("opened");
+  }
+  $(".indicator:not(.n"+_currentUsedNumber+")").each(function() {
+    if($(this).hasClass("opened"))
+      
+      $(this).removeClass("opened");
+  });
+}
 
 function FindButtonNumber(obj,i=0){
   if(obj.hasClass("n"+i))
@@ -189,11 +200,15 @@ $(document).ready(function(){
     ButtonToggleOnMinMax();
 	});
 
-  $(".button-close").mousedown(function(){
+  $(".button-action.cross").mousedown(function(){
 	  CloseIndex(_currentUsedNumber);
       _currentUsedNumber = null;
 	});
 });
+
+function OpenInNewTab(url){
+  window.open(url, '_blank').focus();
+}
 
 function ResetPosition(){
   currentPage = 0;

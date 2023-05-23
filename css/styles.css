@@ -250,15 +250,12 @@
 }
 
 .button{
+    position: relative;
     height: 100%;
     width: 100%;
     background: none;
 	border: none;
 	padding: 0;
-}
-
-.button-testing{
-    background-color: aqua;
 }
 
 .project{
@@ -310,8 +307,33 @@
     background-color: #5a567d;
 }
 
+.indicator{
+    position: absolute;
+    height: 0px;
+    width: 100px;
+    bottom:-50px;
+    left: calc(50% - 50px);
+    margin:0;
+}
+
+.indicator.opened{
+    height: 50px;
+}
+
+.indicator.n1{
+    background-color: hotpink;
+}
+
+.indicator.n2{
+    background-color: #5a567d;
+}
+
+.img-indic{
+    width: 100%;
+}
+
 .desc-project{
-    width: auto;
+    width: calc(100% - 30px);
     height: 0;
     transition: height 2s;
     overflow: hidden;
@@ -341,14 +363,13 @@
     /*height: 100px;*/
 }
 
-
 .button-nav{
     position:absolute;
     transform-origin: center;
-    height:76px;
+    height:100%;
     width:76px;
     left:0;
-    top:calc(50% - 38px);
+    top:0;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s,opacity 0.2s;
@@ -374,9 +395,9 @@
 }
 
 .img-arrow{
+    position: relative;
     width: 100%;
-    left:50%;
-    top:50%;
+    top:calc(50% - 38px);
     /*object-fit: contain;*/
     animation: animate 2s infinite;
 }
@@ -410,28 +431,45 @@
     }
 }
 
-.button-close{
+.button-action{
     position:absolute;
     transform-origin: center;
-    height:40px;
-    width:40px;
-    left:calc(100% - 60px);
-    top: 0;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.2s,opacity 0.2s;
 }
 
-.button-close:hover{
+.button-action:hover{
     transform: scale(1.1);
     filter:sepia(100%) hue-rotate(0deg);
 }
 
-.button-close:active{
+.button-action:active{
     transform: scale(0.9);
     opacity: 0.5;
 }
+
+.button-action.cross{
+    height:40px;
+    width:40px;
+    left:calc(100% - 60px);
+    top: 0;
+}
+
+.button-action.play{
+    height:50px;
+    width:50px;
+    left:calc(100% - 65px);
+    bottom: 0;
+}
+
+
 .img-cross{
+    width: 100%;
+    /*object-fit: contain;*/
+}
+
+.img-manette{
     width: 100%;
     /*object-fit: contain;*/
 }
