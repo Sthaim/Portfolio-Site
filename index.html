@@ -94,10 +94,10 @@
                     <div class="project">
                         <button class="button n2">
                             <div class="image-proj">
-                                <img src="images/retard.png" alt="image of En retard pour la guerre, the game" id="img-retard">
+                                <img src="images/retard.png" alt="image of En retard pour la guerre, the game" class="img-proj">
                             </div>
                             <div class="title-proj" id="title-retard">
-                                En retard pour la guerre
+                                <strong>En retard pour la guerre</strong>
                             </div>
                             <div class="indicator n2">
                                 <img src="images/Icone_Indic.png" alt="indicating arrow" class="img-indic">
@@ -107,12 +107,25 @@
                     <div class="project">
                         <button class="button n1">
                             <div class="image-proj">
-                                <img src="images/lilia.png" alt="image of Lilia, the game" id="img-lilia">
+                                <img src="images/lilia.png" alt="image of Lilia, the game" class="img-proj">
                             </div>
                             <div class="title-proj"  id="title-lilia">
-                                Lilia
+                                <strong>Lilia</strong>
                             </div>
                             <div class="indicator n1">
+                                <img src="images/Icone_Indic.png" alt="indicating arrow" class="img-indic">
+                            </div>
+                        </button>
+                    </div>
+                    <div class="project">
+                        <button class="button n3">
+                            <div class="image-proj">
+                                <img src="images/Affiche_Folgore.jpg" alt="image of Lilia, the game" class="img-proj">
+                            </div>
+                            <div class="title-proj"  id="title-folgore">
+                                <strong>Folgore</strong>
+                            </div>
+                            <div class="indicator n3">
                                 <img src="images/Icone_Indic.png" alt="indicating arrow" class="img-indic">
                             </div>
                         </button>
@@ -122,34 +135,51 @@
                 <div class="desc-project n1">
                     <div class="parent-sliding">
                         <div class="n1 section">
-                            <h2>
-                                What did I work on in this project ?
-                            </h2>
-                            <p class="project-text-desc">
-                                I was one of the two Gameplay Programmers in this school project. I implemented sounds and events. I also worked on the enemy behaviour and movemements
-                            </p>
-        
-                            <h2>
-                                How can you directly control sound parameters using Raycasts?
-                            </h2>
-                            <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
-                            </p>
+                            <div class="in-section">
+                                <div class="txt-desc-parent">
+                                    <h2>
+                                        What was my role in that project?
+                                    </h2>
+                                    <p class="project-text-desc">
+                                        I was one of the two Gameplay Programmers in this school project. I implemented sounds and created the enemy behaviour and movemements.
+                                    </p>
+                                    <p class="project-text-desc">
+                                        I used the navmesh system to make our monster automatically go to specific points. This allowed us to have multiple states in which the baby could either chase the player or roam. 
+                                    </p>
+                                </div>
+                                <div class="img-desc-parent">
+                                    <img src="images/IA_Baby.gif" alt="image of AI doing it's work" class="img-proj">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="n1 section">
+                            <div class="in-section">
+                                <div class="txt-desc-parent">
+                                    <h2>
+                                        How can you directly control sound parameters using Raycasts?
+                                    </h2>
+                                    <p class="project-text-desc">
+                                        On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters.
+                                    </p>
+                                    <p class="project-text-desc">  
+                                        By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources.
+                                    </p>
+
+                                    <p class="project-text-desc">
+                                        The more obstacles between the player and the sound the more the effect would be strong. The use of different position from which the raycast are launched allows for the rough simulation of the ears.
+                                    </p>
+                                </div>
+                                <div class="img-desc-parent">
+                                    <img src="images/Sound_System.gif" alt="image of the sound system" class="img-proj">
+                                </div>
+                            </div>
                         </div>
                         <div class="n1 section">
                             <h2>
-                                How can you directly control sound parameters using Raycasts?
+                                What would I change if I had to do everything again ?
                             </h2>
                             <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
-                            </p>
-                        </div>
-                        <div class="n1 section">
-                            <h2>
-                                How can you directly control sound parameters using Raycasts?
-                            </h2>
-                            <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
+                                Mostly think that the organisation and the way of coding that was used in this project was pretty bad so that would be the principal focus. Making script more loose between eachother using singleton and events as to alleviate ourselves from the hassle of empty serialize fields.
                             </p>
                         </div>
                     </div>
@@ -169,36 +199,23 @@
                 <div class="desc-project n2"> 
                     <div class="parent-sliding">
                         <div class="n2 section">
-                            <h2>
-                                What did I work on in this project ?
-                            </h2>
-                            <p class="project-text-desc">
-                                I was one of the two Gameplay Programmers in this school project. I implemented sounds and events. I also worked on the enemy behaviour and movemements
-                            </p>
-        
-                            <h2>
-                                How can you directly control sound parameters using Raycasts?
-                            </h2>
-                            <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
-                            </p>
-                        </div>
-                        <div class="n2 section">
-                            <h2>
-                                How can you directly control sound parameters using Raycasts?
-                            </h2>
-                            <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
-                            </p>
-                        </div>
-
-                        <div class="n2 section">
-                            <h2>
-                                How can you directly control sound parameters using Raycasts?
-                            </h2>
-                            <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
-                            </p>
+                            <div class="in-section">
+                                <div>
+                                    <h2>
+                                        <!-- En retard pour la guerre -->
+                                        What were the biggest difficulties in making this game?
+                                    </h2>
+                                    <p class="project-text-desc">
+                                        The first one was the fact that it was made by only myself. It required the creation of assets and programming of the whole game by myself.
+                                    </p>
+                                    <p class="project-text-desc">
+                                        The second one was the platform, <a href="https://phaser.io" class="hrefs" >Phaser</a>, because it's a web based framework. So the whole of the programming was done through Javascript. The debugging was one of the hardest part because it's pretty rudimentary as you can see on the gif.
+                                    </p>
+                                </div>
+                                <div>
+                                    <img src="images/Debugging_Phaser.gif" alt="image of a debug exemple of Phaser" id="img-proj">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="button-nav plus n2">
@@ -212,6 +229,54 @@
                     </div>
                     <div onclick="OpenInNewTab('https://sthaim.itch.io/en-retard-pour-la-guerre')" class="button-action play">
                         <img src="images/Icone_Manette.png" alt="controller icone" class="img-manette">
+                    </div>
+                </div>
+                <div class="desc-project n3"> 
+                    <div class="parent-sliding">
+                        <div class="n3 section">
+                            <h2>
+                                Folgore
+                            </h2>
+                            <p class="project-text-desc">
+                                I was one of the two Gameplay Programmers in this school project. I implemented sounds and events. I also worked on the enemy behaviour and movemements
+                            </p>
+        
+                            <h2>
+                                How can you directly control sound parameters using Raycasts?
+                            </h2>
+                            <p class="project-text-desc">
+                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. 
+                                By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
+                            </p>
+                        </div>
+                        <div class="n3 section">
+                            <h2>
+                                How can you directly control sound parameters using Raycasts?
+                            </h2>
+                            <p class="project-text-desc">
+                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. 
+                                By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
+                            </p>
+                        </div>
+
+                        <div class="n3 section">
+                            <h2>
+                                How can you directly control sound parameters using Raycasts?
+                            </h2>
+                            <p class="project-text-desc">
+                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. 
+                                By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="button-nav plus n3">
+                        <img src="images/Icone_Fleche_Right.png" alt="arrow going left" class="img-arrow">
+                    </div>
+                	<div class="button-nav n3">
+                        <img src="images/Icone_Fleche_Right.png" alt="arrow going left" class="img-arrow left">
+                    </div>
+                    <div class="button-action cross">
+                        <img src="images/Icone_Croix.png" alt="cross" class="img-cross">
                     </div>
                 </div>
             </section>
@@ -257,7 +322,7 @@
                         <p id="p-text-contact">
                             E-mail : dinger.matrix@gmail.com <br/>
                             Phone : (France) +33 0652715525 <br/>
-                            Discord : <a href="https://discordapp.com/users/187546293080424448" id="href-discord">Sthaim#8865</a><br/>
+                            Discord : <a href="https://discordapp.com/users/187546293080424448" class="hrefs">Sthaim#8865</a><br/>
                         </p>
                     </div>
                     <div id="contact-logo-centering">
