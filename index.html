@@ -87,9 +87,10 @@
             </section>
             <div id="anchor-projects" class="anchors"></div>         
             <section id="projects-part">
-                <div id="project-title">
+                <div class="project-title">
                     Projects
                 </div>
+                
                 <div id="projects-container">
                     <div class="project">
                         <button class="button n2">
@@ -120,7 +121,7 @@
                     <div class="project">
                         <button class="button n3">
                             <div class="image-proj">
-                                <img src="images/Affiche_Folgore.jpg" alt="image of Lilia, the game" class="img-proj">
+                                <img src="images/Affiche_Folgore.jpg" alt="image of Folgore, the game" class="img-proj">
                             </div>
                             <div class="title-proj"  id="title-folgore">
                                 <strong>Folgore</strong>
@@ -175,12 +176,14 @@
                             </div>
                         </div>
                         <div class="n1 section">
-                            <h2>
-                                What would I change if I had to do everything again ?
-                            </h2>
-                            <p class="project-text-desc">
-                                Mostly think that the organisation and the way of coding that was used in this project was pretty bad so that would be the principal focus. Making script more loose between eachother using singleton and events as to alleviate ourselves from the hassle of empty serialize fields.
-                            </p>
+                            <div class="txt-desc-parent">
+                                <h2>
+                                    What would I change if I had to do everything again ?
+                                </h2>
+                                <p class="project-text-desc">
+                                    Mostly think that the organisation and the way of coding that was used in this project was pretty bad so that would be the principal focus. Making script more loose between eachother using singleton and events as to alleviate ourselves from the hassle of empty serialize fields.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="button-nav plus n1">
@@ -200,7 +203,7 @@
                     <div class="parent-sliding">
                         <div class="n2 section">
                             <div class="in-section">
-                                <div>
+                                <div class="txt-desc-parent">
                                     <h2>
                                         <!-- En retard pour la guerre -->
                                         What were the biggest difficulties in making this game?
@@ -212,8 +215,8 @@
                                         The second one was the platform, <a href="https://phaser.io" class="hrefs" >Phaser</a>, because it's a web based framework. So the whole of the programming was done through Javascript. The debugging was one of the hardest part because it's pretty rudimentary as you can see on the gif.
                                     </p>
                                 </div>
-                                <div>
-                                    <img src="images/Debugging_Phaser.gif" alt="image of a debug exemple of Phaser" id="img-proj">
+                                <div class="img-desc-parent">
+                                    <img src="images/Debugging_Phaser.gif" alt="image of a debug exemple of Phaser" class="img-proj">
                                 </div>
                             </div>
                         </div>
@@ -234,39 +237,47 @@
                 <div class="desc-project n3"> 
                     <div class="parent-sliding">
                         <div class="n3 section">
-                            <h2>
-                                Folgore
-                            </h2>
-                            <p class="project-text-desc">
-                                I was one of the two Gameplay Programmers in this school project. I implemented sounds and events. I also worked on the enemy behaviour and movemements
-                            </p>
-        
-                            <h2>
-                                How can you directly control sound parameters using Raycasts?
-                            </h2>
-                            <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. 
-                                By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
-                            </p>
+                            <div class="in-section">
+                                <div class="txt-desc-parent">
+                                    <h2>
+                                        <!-- En retard pour la guerre -->
+                                        What are my roles in this project ?
+                                    </h2>
+                                    <p class="project-text-desc">
+                                        As I explained in the "About Me" section, I can work in other specialty. In this project, I'm working on part of the programming, VFXs and animation. This is also due to the fact that we have 3 programmers in a team of 9 including me. This means that most of the time, I was not needed for this part of the project.
+                                    </p>
+                                    <p class="project-text-desc">
+                                        Here is one exemple of the work I did in animation for the project:
+                                    </p>
+                                </div>
+                                <div class="img-desc-parent">
+                                    <img src="images/Animation_Exemple.gif" alt="image of an animation" class="img-proj">
+                                </div>
+                            </div>
                         </div>
                         <div class="n3 section">
-                            <h2>
-                                How can you directly control sound parameters using Raycasts?
-                            </h2>
-                            <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. 
-                                By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
-                            </p>
-                        </div>
-
-                        <div class="n3 section">
-                            <h2>
-                                How can you directly control sound parameters using Raycasts?
-                            </h2>
-                            <p class="project-text-desc">
-                                On this project, we used the free software FMod to implement the sounds in our game. You can use scripts to control certain parameters directly like highpass filters. 
-                                By using raycast between sound sources and the player I managed to get a dynamic feedback on the distance and the obstacles between the player and the sound sources 
-                            </p>
+                            <div class="in-section">
+                                <div class="txt-desc-parent">
+                                    <h2>
+                                        <!-- En retard pour la guerre -->
+                                        How can i mix programming with VFX?
+                                    </h2>
+                                    <p class="project-text-desc">
+                                        For the project, we needed a VFX representing electricity as it is the core mechanic of our game. For this purpose, I used the Line Renderer. The Line Renderer works by inputing positions and the component automatically adds lines between them.
+                                    </p>
+                                    <p class="project-text-desc">
+                                        So I wrote a script that takes two positions and adds points between them.
+                                        And I then added a random offset to the points and a curve to the line.
+                                    </p>
+                                    <p class="project-text-desc">
+                                        Finally I added a shader to make a bit more interesting.
+                                    </p>
+                                </div>
+                                <div class="img-desc-parent">
+                                    <img src="images/VFX_Electricité_1.gif" alt="image of VFX of electricity" class="img-proj">
+                                    <img src="images/VFX_Electricité_2.gif" alt="image of a debug exemple of Phaser" class="img-proj">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="button-nav plus n3">
