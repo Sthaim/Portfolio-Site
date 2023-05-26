@@ -183,22 +183,19 @@
 /*#region AboutMe*/
 #about-me-part{
     display: flex;
-    width:100%;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    width:100%;
     padding-top:30px;
     padding-bottom: 30px;
-    align-items: flex-start;
 }
 
 #about-me-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
     font-size: 3em;
     font-family: ibm_plex_sans, serif;
-    display: flex;
-    justify-content: flex-start;
-    padding-left:5%;
-    align-items: center;
     color: #25003b;
 }
 
@@ -211,16 +208,18 @@
 #text-placement{
     display: flex;
     text-align: center;
-    height:100%;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height:100%;
+    padding:0 20px;
 }
 
 #about-me-text{
     display: flex;
-    text-align: justify;
-    padding-left:15%;
+    text-align: center;
+
 }
 
 #about-me-text-titles{
@@ -228,16 +227,6 @@
     font-family: ibm_plex_sans_condensed;
     color : #25003b;
     font-size: 2em;
-    padding-left:12%;
-}
-
-#about-me-image{
-    display: flex;
-    padding-right: 50px;
-    padding-left: 50px;
-    width:100%;
-    max-height: 300px;
-    min-height: 100px;
 }
 /*#endregion */
 
